@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: const Home(),
     );
   }
 }
@@ -100,7 +100,8 @@ class _HomeState extends State<Home> {
       ),
     ];
 
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Consumer<SearchModel>(
       builder: (context, model, _) => FloatingSearchBar(
@@ -223,7 +224,8 @@ class _HomeState extends State<Home> {
                       const SizedBox(height: 2),
                       Text(
                         place.level2Address,
-                        style: textTheme.bodyText2?.copyWith(color: Colors.grey.shade600),
+                        style: textTheme.bodyText2
+                            ?.copyWith(color: Colors.grey.shade600),
                       ),
                     ],
                   ),
@@ -310,7 +312,7 @@ class Map extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SearchBar(),
+                      builder: (context) => const SearchBar(),
                     ),
                   );
                 },
@@ -362,7 +364,7 @@ class _SearchBarState extends State<SearchBar> {
     return Scaffold(
       body: FloatingSearchBar(
         controller: controller,
-        title: Text(
+        title: const Text(
           "Aschaffenburg",
         ),
         hint: 'Suche einen Ort',
